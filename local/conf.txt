@@ -1,0 +1,4 @@
+_myIP="192.168.1.52"
+_victimIP="192.168.1.41"
+_gateIP="192.168.1.254"
+_interface="wlan0"

